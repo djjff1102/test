@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div01{
+            width: 100px;
+            height: 100px;
+            background-color:skyblue;
+            margin: 0 auto;
+        }
+        #div02{
+            width: 50px;
+            height: 50px;
+            background-color:pink;
+        }
+        #div001{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div id="div02">
+            <span id="span01">111111</span>
+        </div>
+    </div>
+    <div id="div001"></div>
+    <script>
+        var div01 = document.getElementById("div01");
+        var div02 = document.getElementById("div02");
+        var span01 = document.getElementById("span01");
+       
+        // span01.addEventListener("click",function(e){
+        //     alert("我是span01");
+        // },true);
+        // div01.addEventListener("click",function(e){
+        //     alert("我是div01");
+        // },true);
+        // div02.addEventListener("click",function(e){
+        //     alert("我是div02");
+        // },true);
+        var str01 = 1;
+        var str = "str01";
+        div01.onclick = function(e)
+        {
+            alert("我是div01");
+
+        };
+        div02.onclick = function(e)
+        {
+            alert("我是div02");
+        };
+        span01.onclick = function(e)
+        {
+            event = event || window.event;
+            alert("我是span01");
+            event.cancelBubble=true;//阻止事件冒泡
+        };
+        
+    </script>
+</body>
+</html>
